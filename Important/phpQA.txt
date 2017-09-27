@@ -1,0 +1,49 @@
+PHP
+1. 	OOPS (interface and abstract)
+2. 	Design Pattern
+3. 	New php Features (Constant scalar expressions, Traits, Variadic functions, Exponentiation using ** operator, PHPdbg)
+4. 	php 5.6 features
+5. 	php 7.0 features (??)
+6. 	Session Hijacking 
+7. 	Session and cookies
+8. 	anoyumus function
+9. 	Magic methods (__CallStatic,__clone,__get,__set,__sleep,__wakeup,__construct,__destruct,__debuginfo)
+10. Override and overload
+11. Language conversion
+12. Namespace and use
+13. PHP.ini and httaccess
+14. Raw data posting
+15. PDO
+16. Data abstract layer
+17. Autoload __SPautoload
+18. use Strict 
+19. Error handling (all version)
+20. MVC
+21. Typehint (type hinting means providing hints to function to only accept the given data type. In technical word we can say that Type Hinting is method by which we can force function to accept the desired data type. In PHP we can use type hinting for Object, Array and callable data type. Callable type hinting is only available from PHP version 5.4)
+22. encrypt and decrypt salt value.
+23. Error code
+
+1. API Security
+2. SSL Communication Security ( peer verification in cafile)
+3. Web page Security
+
+
+1. Advantage of anonymous functions
+	a. Not reusability
+	b. Private Funcationality
+	c. If no name is needed because the function is only ever called in one place, then why add a name to whatever namespace you're in.
+	d. Anonymous functions are declared inline and inline functions have advantages in that they can access variables in the parent scopes. Yes, you can put a name on an anonymous function, but that's usually pointless if it's declared inline. So inline has a significant advantage and if you're doing inline, there's little reason to put a name on it.
+	e. The code seems more self-contained and readable when handlers are defined right inside the code that's calling them. You can read the code in almost sequential fashion rather than having to go find the function with that name.
+	
+2. REST API
+
+3. OAUTH 1.0
+4. OAUTH 2.0
+	 
+	 
+	 
+Replication
+Partitioning
+Performance & Scalability
+MySQL Cluster
+InnoDB

@@ -1,0 +1,278 @@
+Javascript
+
+1. ViewState and SessionState?
+2. Variable typing in Javascript
+3. function of delete operator? 
+The functionality of delete operator is used to delete all variables and objects in a program but it cannot delete variables declared with VAR keyword.
+
+4. What is the data type of variables of in JavaScript?
+
+All variables in the JavaScript are object data types.
+
+5. What are the two basic groups of dataypes in JavaScript?
+
+They are as –
+
+Primitive
+Reference types.
+Primitive types are number and Boolean data types. Reference types are more complex types like strings and dates.
+
+6. What is the use of type of operator?
+
+‘Typeof’ is an operator which is used to return a string description of the type of a variable.
+
+7. Which keywords are used to handle exceptions?
+
+Try… Catch—finally is used to handle exceptions in the JavaScript
+
+Try{
+Code
+}
+Catch(exp){
+Code to throw an exception
+}
+Finally{
+Code runs either it finishes successfully or after catch
+}
+
+8. What are the different types of errors in JavaScript?
+
+There are three types of errors:
+
+Load time errors: Errors which come up when loading a web page like improper syntax errors are known as Load time errors and it generates the errors dynamically.
+Run time errors: Errors that come due to misuse of the command inside the HTML language.
+Logical Errors: These are the errors that occur due to the bad logic performed on a function which is having different operation.
+
+9. What is the ‘Strict’ mode in JavaScript and how can it be enabled?
+
+Strict Mode adds certain compulsions to JavaScript. Under the strict mode, JavaScript shows errors for a piece of codes, which did not show an error before, but might be problematic and potentially unsafe. Strict mode also solves some mistakes that hamper the JavaScript engines to work efficiently.
+
+Strict mode can be enabled by adding the string literal “use strict” above the file. This can be illustrated by the given example:
+
+
+function myfunction()
+{
+“use strict";
+var v = “This is a strict mode function";
+}
+
+"use strict"; Defines that JavaScript code should be executed in "strict mode".
+
+10.  Explain window.onload and onDocumentReady?
+
+The onload function is not run until all the information on the page is loaded. This leads to a substantial delay before any code is executed.
+
+onDocumentReady loads the code just after the DOM is loaded. This allows early manipulation of the code.
+
+
+11.  How will you explain closures in JavaScript? When are they used?
+
+Closure is a locally declared variable related to a function which stays in memory when the function has returned.
+
+For example:
+
+function greet(message) {
+console.log(message);
+}
+function greeter(name, age) {
+return name + " says howdy!! He is " + age + " years old";
+}
+// Generate the message
+var message = greeter("James", 23);
+// Pass it explicitly to greet
+greet(message);
+This function can be better represented by using closures
+function greeter(name, age) {
+var message = name + " says howdy!! He is " + age + " years old";
+return function greet() {
+console.log(message);
+};
+}
+// Generate the closure
+var JamesGreeter = greeter("James", 23);
+// Use the closure
+JamesGreeter();
+
+12. What is the difference between .call() and .apply()?
+
+The function .call() and .apply() are very similar in their usage except a little difference. .call() is used when the number of the function’s arguments are known to the programmer, as they have to be mentioned as arguments in the call statement. On the other hand, .apply() is used when the number is not known. The function .apply() expects the argument to be an array.
+
+The basic difference between .call() and .apply() is in the way arguments are passed to the function. Their usage can be illustrated by the given example.
+
+var someObject = {
+myProperty : 'Foo',
+myMethod : function(prefix, postfix) {
+alert(prefix + this.myProperty + postfix);
+}
+};
+someObject.myMethod('<', '>'); // alerts '<Foo>'
+var someOtherObject  = {
+myProperty : 'Bar'
+};
+someObject.myMethod.call(someOtherObject, '<', '>'); // alerts '<Bar>'
+someObject.myMethod.apply(someOtherObject, ['<', '>']); // alerts '<Bar>'
+
+13. Define event bubbling?
+
+JavaScript allows DOM elements to be nested inside each other. In such a case, if the handler of the child is clicked, the handler of parent will also work as if it were clicked too.
+
+14. Is JavaScript case sensitive? Give an example?
+
+Yes, JavaScript is case sensitive. For example, a function parseInt is not same as the function Parseint.
+
+15. Write the point of difference between web-garden and a web-farm?
+
+Both web-garden and web-farm are web hosting systems. The only difference is that web-garden is a setup that includes many processors in a single server while web-farm is a larger setup that uses more than one server.
+
+16. How are DOM utilized in JavaScript?
+
+DOM stands for Document Object Model and is responsible for how various objects in a document interact with each other. DOM is required for developing web pages, which includes objects like paragraph, links, etc. These objects can be operated to include actions like add or delete. DOM is also required to add extra capabilities to a web page. On top of that, the use of API gives an advantage over other existing models.
+
+17. How are event handlers utilized in JavaScript?
+
+Events are the actions that result from activities, such as clicking a link or filling a form, by the user. An event handler is required to manage proper execution of all these events. Event handlers are an extra attribute of the object. This attribute includes event’s name and the action taken if the event takes place.
+
+18. Explain the role of deferred scripts in JavaScript?
+
+By default, the parsing of the HTML code, during page loading, is paused until the script has not stopped executing. It means, if the server is slow or the script is particularly heavy, then the webpage is displayed with a delay. While using Deferred, scripts delays execution of the script till the time HTML parser is running. This reduces the loading time of web pages and they get displayed faster.
+
+19. What are the various functional components in JavaScript?
+
+The different functional components in JavaScript are-
+
+First-class functions: Functions in JavaScript are utilized as first class objects. This usually means that these functions can be passed as arguments to other functions, returned as values from other functions, assigned to variables or can also be stored in data structures.
+
+Nested functions: The functions, which are defined inside other functions, are called Nested functions. They are called ‘everytime’ the main function is invoked.
+
+20. Write about the errors shown in JavaScript?
+
+JavaScript gives a message if it encounters an error. The recognized errors are –
+
+Load-time errors: The errors shown at the time of the page loading are counted under Load-time errors. These errors are encountered by the use of improper syntax, and thus are detected while the page is getting loaded.
+Run-time errors: This is the error that comes up while the program is running. It is caused by illegal operations, for example, division of a number by zero, or trying to access a non-existent area of the memory.
+Logic errors: It is caused by the use of syntactically correct code, which does not fulfill the required task. For example, an infinite loop.
+
+21. What are Screen objects?
+
+Screen objects are used to read the information from the client’s screen. The properties of screen objects are –
+
+AvailHeight: Gives the height of client’s screen
+AvailWidth: Gives the width of client’s screen.
+ColorDepth: Gives the bit depth of images on the client’s screen
+Height: Gives the total height of the client’s screen, including the taskbar
+Width: Gives the total width of the client’s screen, including the taskbar
+
+
+22. Define unescape() and escape() functions?
+
+The escape () function is responsible for coding a string so as to make the transfer of the information from one computer to the other, across a network.
+
+For Example:
+
+
+<script>
+document.write(escape(“Hello? How are you!”));
+</script>
+
+
+Output: Hello%3F%20How%20are%20you%21
+
+The unescape() function is very important as it decodes the coded string.
+
+It works in the following way. For example:
+
+
+<script>
+document.write(unescape(“Hello%3F%20How%20are%20you%21”));
+</script>
+Output: Hello? How are you!
+
+23. Why it is not advised to use innerHTML in JavaScript?
+
+innerHTML content is refreshed every time and thus is slower. There is no scope for validation in innerHTML and, therefore, it is easier to insert rouge code in the document and, thus, make the web page unstable.
+
+24. How are JavaScript and ECMA Script related?
+
+ECMA Script are like rules and guideline while Javascript is a scripting language used for web development.
+
+25. What is namespacing in JavaScript and how is it used?
+
+Namespacing is used for grouping the desired functions, variables etc. under a unique name. It is a name that has been attached to the desired functions, objects and properties. This improves modularity in the coding and enables code reuse.
+
+26. How can JavaScript codes be hidden from old browsers that don’t support JavaScript?
+
+For hiding JavaScript codes from old browsers:
+
+Add “<!–” without the quotes in the code just after the <script> tag.
+
+Add “//–>” without the quotes in the code just before the <script> tag.
+
+Old browsers will now treat this JavaScript code as a long HTML comment. While, a browser that supports JavaScript, will take the “<!–” and “//–>” as one-line comments.
+
+27. Explain the differences between one-way data flow and two-way data binding.
+
+This question may seem self-explanatory, but what you’re looking for is a developer who can demonstrate solid understanding of how data flows throughout the application. In two-way data binding, changes to the UI and changes to the model occur asynchronously—a change on one end is reflected on the other. In one-way data binding, data only flows one way, and any changes that the user makes to the view will not be reflected in the model until the two are synced. Angular makes implementing two-way binding a snap, whereas React would be your framework of choice for deterministic one-way data flow.
+
+28.  Function#call and Function#apply
+
+29. Object.create?
+
+30 . prop of object
+31. hasOwnProperty
+32
+
+
+
+
+
+
+
+HTML
+
+1. HTML5 Features
+2. HTML5 API
+3. Local Storage and Session Storage
+4. Lifecyle of URL Request
+5. Web workers
+6. what is use of iframe
+
+
+1. CSS3 Features
+2. Box Model
+3. Box model - centre align horizontal and veritical
+4. pseudo Class
+5. Preprocessing in CSS3 - 
+6. How to mixing style in preprocesing
+
+JS
+1. Closure 
+2. Lexical Scoping
+3. Variable Hoisting
+4. Design pattern
+5. Self invoking function in js
+6. protocal version
+7. ES6 features
+8. Arrow function explain
+9. Let and const
+10. var and let
+
+
+
+
+
+ReactJs
+1. Lifecycle of ReactJs
+2. significant use of props and state
+3. Key and reference in reactjs
+4. Let and const
+5. var and let
+6. Rest Operator
+7. object literal feature in es6
+8. promise statement
+9. Map in reactjs
+10. Set in reactjs
+11. template in reactjs
+12. setState in reactjs
+13. How browser support ReactJs
+14. Babel loader
+15. presets

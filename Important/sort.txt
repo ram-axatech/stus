@@ -1,0 +1,33 @@
+
+Sort 
+
+1. Bubble sort - normal sort O(N^2) two for loop array, after sort also finished loop end.
+
+2. Quick = 0(N) - pivot value of 1 or last value and left Array less value and mid of pivot value and right of greater value - best sort 
+
+3. inseration sort - 
+
+4. merge sort - split into piece and compare the value 
+
+5. Binary sort
+
+Search = 
+
+Normal search
+
+Binary search = divided into two part and find last value to compary (     int m = l + (r-l)/2;
+ 
+    // Check if x is present at mid
+    if (arr[m] == x) 
+        return m;  
+ 
+    // If x greater, ignore left half  
+    if (arr[m] < x) 
+        l = m + 1; 
+ 
+    // If x is smaller, ignore right half 
+    else
+         r = m - 1; )
+		 
+		 
+		 

@@ -1,0 +1,20 @@
+not answered question
+
+1. Mult req in api - https://github.com/barbushin/multirequest/blob/master/example/index.php , http://tech.vg.no/2013/07/23/php-perform-requests-in-parallel/
+2. persistant cookie - stored in user dir - 
+3. Template handle with different banner
+4. Rest authentication failed - respone code - 401
+5. Oauth - https://stackoverflow.com/questions/7561631/oauth-2-0-benefits-and-use-cases-why
+6. OAuth REST API
+
+https://softwareengineering.stackexchange.com/questions/298973/rest-api-security-stored-token-vs-jwt-vs-oauth
+7. MVC Deep concept - explained but need to do step by step
+8. 
+
+Laravel
+1. Lifecycle
+2. Facade
+3. Contract
+4. Benifits
+5. Routes
+6. 
