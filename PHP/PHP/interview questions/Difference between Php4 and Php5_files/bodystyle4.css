@@ -1,0 +1,27 @@
+#header-bar {background: url(../images/body/style4/header-bar.png) 0 0 repeat-x;}
+#header-bar-bottom {background: url(../images/body/style4/header-bar-bottom.png) 0 0 repeat-x;}
+img#logo {background: url(../images/body/style4/logo.png) 0 0 no-repeat;}
+#showcase-top {background: url(../images/body/style4/showcase-tl.png) 0 0 no-repeat;}
+#showcase-top2 {background: url(../images/body/style4/showcase-tr.png) 100% 0 no-repeat;}
+#showcase-top3 {background: url(../images/body/style4/showcase-tm.png) 0 0 repeat-x;}
+#showcase-main {background: url(../images/body/style4/showcase-middle.png) 0 0;}
+#showcase-main2 {background: url(../images/body/style4/showcase-l.png) 0 0 repeat-y;}
+#showcase-main3 {background: url(../images/body/style4/showcase-r.png) 100% 0 repeat-y;}
+#showcase-bottom {background: url(../images/body/style4/showcase-bl.png) 0 0 no-repeat;}
+#showcase-bottom2 {background: url(../images/body/style4/showcase-br.png) 100% 0 no-repeat;}
+#showcase-bottom3 {background: url(../images/body/style4/showcase-bm.png) 0 0 repeat-x;}
+#main-top {background: url(../images/body/style4/main-tl.png) 0 0 no-repeat;}
+#main-top2 {background: url(../images/body/style4/main-tr.png) 100% 0 no-repeat;}
+#main-top3 {background: url(../images/body/style4/main-tm.png) 0 0 repeat-x;}
+#main {background: url(../images/body/style4/main-m.png) 0 0;}
+#main2 {background: url(../images/body/style4/main-l.png) 0 0 repeat-y;}
+#main3 {background: url(../images/body/style4/main-r.png) 100% 0 repeat-y;}
+#main-bottom {background: url(../images/body/style4/main-bl.png) 0 0 no-repeat;}
+#main-bottom2 {background: url(../images/body/style4/main-br.png) 100% 0 no-repeat;}
+#main-bottom3 {background: url(../images/body/style4/main-bm.png) 0 0 repeat-x;}
+#bottom-shadow {background: url(../images/body/style4/bottom-shadow.png) 50% 0 no-repeat;}
+img#rocket {background: url(../images/body/style4/rocket.png) 0 0 no-repeat;}
+span.pathway img {background: url(../images/body/style4/path-div.png) 0 50% no-repeat;}
+a.large .button {background: url(../images/body/style4/font-lg.png) 0 0 no-repeat;}
+a.small .button {background: url(../images/body/style4/font-sm.png) 0 0 no-repeat;}
+.rok-content-rotator .arrow {background: url(../images/body/style4/rotator-active.png) 0 0 no-repeat;}

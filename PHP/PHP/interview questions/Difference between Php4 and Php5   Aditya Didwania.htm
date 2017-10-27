@@ -1,0 +1,848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="google-site-verification" content="eHgIKB9O_vhV1t8Ye15Hx-A7HG7xSKHf1q5e6aETa3M" />
+		<link rel="shortcut icon" href="favicon.ico" >
+   		<link rel="icon" href="animated_favicon.gif" type="image/gif" >
+		<title>Difference between Php4 and Php5 | Aditya Didwania</title>
+		
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.adityad.com/feed/" />
+		<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.adityad.com/feed/rss/" />
+		<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.adityad.com/feed/atom/" />
+		<link rel="pingback" href="http://www.adityad.com/xmlrpc.php" />
+		
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/mootools-release-1.11.js"></script>
+		
+		<link rel="shortcut icon" href="http://www.adityad.com/wp-content/themes/rt-replicant/images/favicon.ico" />
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/template_css.css" rel="stylesheet" type="text/css" />
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/colorstyle8.css" rel="stylesheet" type="text/css" />
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/bodystyle4.css" rel="stylesheet" type="text/css" />
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/typography.css" rel="stylesheet" type="text/css" />
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/rokslidestrip.css" rel="stylesheet" type="text/css" />
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/rokmoomenu.css" rel="stylesheet" type="text/css" />
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/wp.css" rel="stylesheet" type="text/css" />
+		
+		<!--[if IE 7]> <link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/template_ie7.css" rel="stylesheet" type="text/css" /> <![endif]-->
+		
+		<!--[if IE 8]> <link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/template_ie8.css" rel="stylesheet" type="text/css" /> <![endif]-->
+		
+		<style type="text/css">
+			div.wrapper { margin: 0 auto; width: 962px;padding:0;}
+			#body-bg {background-attachment:scroll;}
+			#leftcol { width:225px;padding:0;}
+			#rightcol { width:225px;padding:0;}
+			#maincol { margin-left:225px;margin-right:225px;padding:0;}
+			#mainblock {margin-left:0px;margin-right:0px;padding:0;}
+			#banner-left { width:0px;padding:0;}
+			#banner-right { width:0px;padding:0;}
+			#moduleslider-size { height:200px;}
+		</style>
+		
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/rokmoomenu.js"></script>
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/mootools.bgiframe.js"></script>
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/rokutils.js"></script>
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/roknewsflash-packed.js"></script>
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/roktopmenu.js"></script>
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/rokslidestrip.js"></script>
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/rokfonts.js"></script>
+		
+				
+		<script type="text/javascript">var rokboxPath = "http://www.adityad.com/wp-content/themes/rt-replicant/js/rokbox/";</script>
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/rokbox/rokbox.js"></script>
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/js/rokbox/themes/light/rokbox-style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/rokbox/themes/light/rokbox-config.js"></script>
+		
+				
+		<script type="text/javascript">
+			window.addEvent('domready', function() {
+			var modules = ['module','moduletable','submenu-block'];
+			var header = "h3";
+			RokBuildSpans(modules, header);
+			});
+		</script>
+		
+		<script type="text/javascript">
+			window.addEvent('domready', function() {
+			new Rokmoomenu($E('ul.menutop '), {
+				bgiframe: false,
+				delay: 500,
+				animate: {
+					props: ['height', 'opacity'],
+					opts: {
+						duration: 600,
+						fps: 200,
+						transition: Fx.Transitions.Sine.easeOut			}
+					},
+				bg: {
+					enabled: true,
+					overEffect: {
+							duration: 100,
+							transition: Fx.Transitions.Expo.easeOut			},
+					outEffect: {
+						duration: 800,
+						transition: Fx.Transitions.Sine.easeOut			}
+					},
+				submenus: {
+					enabled: true,
+					overEffect: {
+						duration: 50,
+						transition: Fx.Transitions.Expo.easeOut			},
+					outEffect: {
+						duration: 600,
+						transition: Fx.Transitions.Sine.easeIn			},
+					offsets: {
+						top: 5,
+						right: 15,
+						bottom: 5,
+						left: 5			}
+					}
+				});
+			});
+
+		</script>
+		
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/roksplitmenu.js"></script>
+		<script type="text/javascript">
+			window.addEvent('domready', function() {
+			var roksplitmenu = new RokSplitMenu();
+			});
+
+
+		</script>
+
+		
+		<!--[if IE 6]>
+		<link href="http://www.adityad.com/wp-content/themes/rt-replicant/css/template_ie6.php?colorstyle=colorstyle8&bodystyle=bodystyle4" rel="stylesheet" type="text/css" /> 
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/roksameheight.js"></script>
+		<script type="text/javascript" src="http://www.adityad.com/wp-content/themes/rt-replicant/js/rokie6warn.js"></script> 
+		<![endif]-->
+		
+		<link rel='stylesheet' id='wp_dlmp_styles-css'  href='http://www.adityad.com/wp-content/plugins/download-monitor/page-addon/styles.css?ver=2.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sexy-bookmarks-css'  href='http://www.adityad.com/wp-content/plugins/sexybookmarks/spritegen/shr-custom-sprite.css?ver=3.2.9' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.adityad.com/wp-includes/js/jquery/jquery.js?ver=1.3.2'></script>
+<script type='text/javascript' src='http://www.adityad.com/wp-content/plugins/content-slide/js/jquery.innerfade.js?ver=2.9.2'></script>
+<script type='text/javascript' src='http://www.adityad.com/wp-content/plugins/fckeditor-for-wordpress-plugin/ckeditor/ckeditor.js?ver=2.9.2'></script>
+<script type='text/javascript' src='http://www.adityad.com/wp-content/plugins/sexybookmarks/js/sexy-bookmarks-public.js?ver=3.2.9'></script>
+<script type='text/javascript' src='http://www.adityad.com/wp-content/plugins/sexybookmarks/js/shareaholic-perf.js?ver=3.2.9'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.adityad.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.adityad.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Aditya Didwania' href='http://www.adityad.com' />
+<link rel='start' title='Welcome' href='http://www.adityad.com/about/hello-world/' />
+<link rel='prev' title='PayPal class' href='http://www.adityad.com/php/paypal-class/' />
+<link rel='next' title='Joomla &#8211; Website' href='http://www.adityad.com/about/joomla-website/' />
+<meta name="generator" content="WordPress 2.9.2" />
+
+<!-- All in One SEO Pack 1.6.13.1 by Michael Torbert of Semper Fi Web Design[494,615] -->
+<meta name="description" content="Backward Incompatible Changes Although most existing PHP 4 code should work without changes, you should pay attention to the following backward incompatible" />
+<meta name="keywords" content="difference between php4 and php5,php4 and php5" />
+<link rel="canonical" href="http://www.adityad.com/php/difference-between-php4-and-php5/" />
+<!-- /all in one seo pack -->
+<!-- styles for Simple Google Map -->
+<style type='text/css'>
+#SGM {width:100%; height:300px;}
+#SGM .infoWindow {line-height:13px; font-size:10px;}
+#SGM input {margin:4px 4px 0 0; font-size:10px;}
+#SGM input.text {border:solid 1px #ccc; background-color:#fff; padding:2px;}
+</style>
+<!-- end styles for Simple Google Map -->
+		
+	</head>
+	<body oncontextmenu="return false;" id="ff-default" class="f-default iehandle">
+
+	<div id="body-bg">
+		<div id="bg-panel2">
+			<!-- Begin Top Bar -->
+			<div id="top-bar">
+				<div class="wrapper">
+					<div id="horiz-menu" class="moomenu">
+						<ul class="menutop">
+  							<!--<li class="home"><a href="http://www.adityad.com/">Home</a></li>-->
+ 							
+ 							<li class="page_item page-item-17 parent"><a class="link" href="http://www.adityad.com" title="About Me"><span>About Me</span></a>
+<ul>
+<li class="page_item page-item-45"><a class="link" href="http://www.adityad.com/about-me/goodies/" title="Goodies"><span>Goodies</span></a></li>
+<li class="page_item page-item-91"><a class="link" href="http://www.adityad.com/about-me/search/" title="Search"><span>Search</span></a></li>
+<li class="page_item page-item-130"><a class="link" href="http://www.adityad.com/about-me/online-radio/" title="Online radio"><span>Online radio</span></a></li>
+</ul>
+</li>
+<li class="page_item page-item-4"><a class="link" href="http://www.adityad.com/portfolio/" title="Portfolio"><span>Portfolio</span></a></li>
+<li class="page_item page-item-6 current_page_parent"><a class="link" href="http://www.adityad.com/resources/" title="Blog"><span>Blog</span></a></li>
+<li class="page_item page-item-8"><a class="link" href="http://www.adityad.com/contact/" title="Contact Me"><span>Contact Me</span></a></li>
+
+ 							
+						</ul>
+						<ul style="float:right; margin-top:-5px;">
+							<li> <a href="http://www.facebook.com/adityadid" target="_blank"><img src="http://www.adityad.com/images/facebook.png" border="0" width="28" height="28" alt="facebook" /></a></li>
+							<li><a href="http://twitter.com/adityadid" target="_blank"><img src="http://www.adityad.com/images/twitter.png" border="0" width="28" height="28" alt="twitter" /></a></li>
+							<li><a href="http://in.linkedin.com/in/adityadid" target="_blank"><img src="http://www.adityad.com/images/linkedin.png" border="0" width="28" height="28" alt="linkedin" /></a></li>
+							<li><a href="http://feeds.feedburner.com/AdityaDidwania" target="_blank"><img src="http://www.adityad.com/images/feed.png" border="0" width="26" height="26" alt="rss-feed" /></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End Top Bar -->
+
+			<!-- Begin Header Bar -->
+			<div id="header-bar">
+				<div class="wrapper">
+					<div id="blogtitle">
+						<h1 style="font-size:34px; margin-top:0px;"><a href="http://www.adityad.com">Aditya Didwania</a></h1>
+					</div>
+					<div id="subtitle">Software Engg. &amp; Webdeveloper</div>
+						<div id="topmenu-mod">
+							<div class="moduletable">
+							
+														
+								<ul id="mainlevel-top">
+								
+																
+										<li><a href="http://www.adityad.com/php/mvc/" title="MVC"><span>MVC</span></a></li>
+										
+																
+										<li><a href="http://www.adityad.com/php/php/" title="Php"><span>Php</span></a></li>
+										
+																
+										<li><a href="http://www.adityad.com/php/comparision-of-various-mvc-frameworks/" title="Comparision of various MVC Frameworks"><span>Comparision of various MVC Frameworks</span></a></li>
+										
+																
+										<li><a href="http://www.adityad.com/php/cake-php/" title="Cake Php"><span>Cake Php</span></a></li>
+										
+																
+								</ul>		
+								
+															
+							</div>	
+						</div>
+					</div>
+				<div class="clr"></div>
+			</div>
+			<div id="header-bar-bottom">
+				
+			</div>
+			<!-- End Header Bar -->	
+	<div class="wrapper">
+		<div id="mainblock">
+			<div id="main-top"></div>
+			<div id="main-top2"></div>
+			<div id="main-top3"></div>
+			
+						
+				<div id="main">
+					<div id="main2">
+						<div id="main3">
+						
+												
+							<div class="main-padding">
+																
+																
+									<!-- Begin Right Column -->
+								<div id="rightcol">
+									<div class="padding">
+									
+																												
+										
+									
+										<!-- Begin Widget -->
+										<div class="widget_wrapper">
+											<div class="inner">
+											<div class="padding moduletable">
+											<form action="http://www.adityad.com/about-me/search/" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-5112702530012908:hyeztclj1k9" />
+    <input type="hidden" name="cof" value="FORID:10" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="25" />
+    <input class="button" type="submit" name="sa" value="Search" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.co.in/cse/brand?form=cse-search-box&amp;lang=en"></script>
+</div>
+<div style="margin:20px 0 20px -1px;">
+
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/pages/Aditya-Didwania-Webdeveloper/196139794441" width="215" show_faces="true" stream="true" header="true"></fb:like-box>
+</div>
+
+												<div class="padding">
+													<div class="moduletable pages_right">
+														<h3>Main Menu</h3>
+														<ul class="sidebar_ul">
+															
+															<!--<li class="home"><a href="http://www.adityad.com/">Home</a></li>-->													
+															<li class="page_item page-item-17"><a href="http://www.adityad.com" title="About Me">About Me</a>
+<ul>
+	<li class="page_item page-item-45"><a href="http://www.adityad.com/about-me/goodies/" title="Goodies">Goodies</a></li>
+	<li class="page_item page-item-91"><a href="http://www.adityad.com/about-me/search/" title="Search">Search</a></li>
+	<li class="page_item page-item-130"><a href="http://www.adityad.com/about-me/online-radio/" title="Online radio">Online radio</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4"><a href="http://www.adityad.com/portfolio/" title="Portfolio">Portfolio</a></li>
+<li class="page_item page-item-6 current_page_parent"><a href="http://www.adityad.com/resources/" title="Blog">Blog</a></li>
+<li class="page_item page-item-8"><a href="http://www.adityad.com/contact/" title="Contact Me">Contact Me</a></li>
+														</ul>
+     												</div>
+												</div>
+											</div>
+											<div class="col-bottom"></div>
+											<div class="col-bottom2"></div>
+											<div class="col-bottom3"></div>
+										</div>
+										<!-- End Widget -->
+										
+									
+																											<!-- Begin Widget -->
+										<div class="widget_wrapper">
+											<div class="inner">
+												<div class="padding">
+													<div class="moduletable pages_right">
+														<h3>Google Ads</h3>
+														<ul class="sidebar_ul">
+														
+															<li>
+															<script type="text/javascript"><!--
+google_ad_client = "pub-5112702530012908";
+/* 160x600, created 12/26/09 */
+google_ad_slot = "9959018046";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></li>
+														
+															
+														</ul>
+     												</div>
+												</div>
+											</div>
+											<div class="col-bottom"></div>
+											<div class="col-bottom2"></div>
+											<div class="col-bottom3"></div>
+										</div>
+										<!-- End Widget -->
+										</div>
+									</div>
+									<!-- End Right Column -->								
+																
+																
+									<!-- Begin Left Column -->
+								<div id="leftcol">
+									<div class="padding">
+										
+										
+									
+										<!-- Begin Widget -->
+										<div class="widget_wrapper">
+											<div class="inner">
+												<div class="padding">
+													<div class="moduletable tags_left">
+														<h3>Tags</h3>
+														<a href='http://www.adityad.com/tag/ajax/' class='tag-link-5' title='2 topics' style='padding-right:5px;font-size: 10.9189189189pt;'>Ajax</a>
+<a href='http://www.adityad.com/tag/autocomplete/' class='tag-link-36' title='1 topic' style='padding-right:5px;font-size: 8pt;'>autocomplete</a>
+<a href='http://www.adityad.com/tag/autosuggest/' class='tag-link-37' title='1 topic' style='padding-right:5px;font-size: 8pt;'>autosuggest</a>
+<a href='http://www.adityad.com/tag/best-video/' class='tag-link-20' title='1 topic' style='padding-right:5px;font-size: 8pt;'>best video</a>
+<a href='http://www.adityad.com/tag/box-shadow-in-ie/' class='tag-link-57' title='1 topic' style='padding-right:5px;font-size: 8pt;'>box-shadow in ie</a>
+<a href='http://www.adityad.com/tag/cake-php/' class='tag-link-24' title='2 topics' style='padding-right:5px;font-size: 10.9189189189pt;'>cake php</a>
+<a href='http://www.adityad.com/tag/chat/' class='tag-link-59' title='1 topic' style='padding-right:5px;font-size: 8pt;'>chat</a>
+<a href='http://www.adityad.com/tag/codeigniter/' class='tag-link-25' title='1 topic' style='padding-right:5px;font-size: 8pt;'>codeigniter</a>
+<a href='http://www.adityad.com/tag/css3/' class='tag-link-55' title='1 topic' style='padding-right:5px;font-size: 8pt;'>css3</a>
+<a href='http://www.adityad.com/tag/difference-between-php4-and-php5/' class='tag-link-48' title='1 topic' style='padding-right:5px;font-size: 8pt;'>difference between php4 and php5</a>
+<a href='http://www.adityad.com/tag/facebook-like-chat/' class='tag-link-60' title='1 topic' style='padding-right:5px;font-size: 8pt;'>facebook like chat</a>
+<a href='http://www.adityad.com/tag/framework/' class='tag-link-23' title='1 topic' style='padding-right:5px;font-size: 8pt;'>framework</a>
+<a href='http://www.adityad.com/tag/frameworks/' class='tag-link-26' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Frameworks</a>
+<a href='http://www.adityad.com/tag/important-factors/' class='tag-link-29' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Important factors</a>
+<a href='http://www.adityad.com/tag/install-linux-without-repartioning/' class='tag-link-43' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Install linux without repartioning</a>
+<a href='http://www.adityad.com/tag/internet-explorer/' class='tag-link-58' title='1 topic' style='padding-right:5px;font-size: 8pt;'>internet explorer</a>
+<a href='http://www.adityad.com/tag/ipn/' class='tag-link-46' title='1 topic' style='padding-right:5px;font-size: 8pt;'>ipn</a>
+<a href='http://www.adityad.com/tag/joomla/' class='tag-link-4' title='3 topics' style='padding-right:5px;font-size: 12.8648648649pt;'>Joomla</a>
+<a href='http://www.adityad.com/tag/joomla-extensions/' class='tag-link-49' title='1 topic' style='padding-right:5px;font-size: 8pt;'>joomla extensions</a>
+<a href='http://www.adityad.com/tag/joomla-modules/' class='tag-link-52' title='1 topic' style='padding-right:5px;font-size: 8pt;'>joomla modules</a>
+<a href='http://www.adityad.com/tag/joomla-templates/' class='tag-link-51' title='1 topic' style='padding-right:5px;font-size: 8pt;'>joomla templates</a>
+<a href='http://www.adityad.com/tag/joomla-work/' class='tag-link-50' title='1 topic' style='padding-right:5px;font-size: 8pt;'>joomla work</a>
+<a href='http://www.adityad.com/tag/linux/' class='tag-link-38' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Linux</a>
+<a href='http://www.adityad.com/tag/linux-installation/' class='tag-link-41' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Linux installation</a>
+<a href='http://www.adityad.com/tag/must-watch/' class='tag-link-21' title='1 topic' style='padding-right:5px;font-size: 8pt;'>must watch</a>
+<a href='http://www.adityad.com/tag/mvc/' class='tag-link-8' title='4 topics' style='padding-right:5px;font-size: 14.4864864865pt;'>MVC</a>
+<a href='http://www.adityad.com/tag/payment/' class='tag-link-44' title='1 topic' style='padding-right:5px;font-size: 8pt;'>payment</a>
+<a href='http://www.adityad.com/tag/paypal/' class='tag-link-45' title='1 topic' style='padding-right:5px;font-size: 8pt;'>paypal</a>
+<a href='http://www.adityad.com/tag/php/' class='tag-link-3' title='10 topics' style='padding-right:5px;font-size: 20pt;'>PHP</a>
+<a href='http://www.adityad.com/tag/php4-and-php5/' class='tag-link-47' title='1 topic' style='padding-right:5px;font-size: 8pt;'>php4 and php5</a>
+<a href='http://www.adityad.com/tag/php-classes/' class='tag-link-33' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Php classes</a>
+<a href='http://www.adityad.com/tag/plugin/' class='tag-link-35' title='1 topic' style='padding-right:5px;font-size: 8pt;'>plugin</a>
+<a href='http://www.adityad.com/tag/plugins/' class='tag-link-53' title='1 topic' style='padding-right:5px;font-size: 8pt;'>plugins</a>
+<a href='http://www.adityad.com/tag/rounded-corners-in-ie/' class='tag-link-56' title='1 topic' style='padding-right:5px;font-size: 8pt;'>rounded corners in ie</a>
+<a href='http://www.adityad.com/tag/search-engine-optimization/' class='tag-link-28' title='2 topics' style='padding-right:5px;font-size: 10.9189189189pt;'>Search Engine Optimization</a>
+<a href='http://www.adityad.com/tag/seo/' class='tag-link-27' title='2 topics' style='padding-right:5px;font-size: 10.9189189189pt;'>SEO</a>
+<a href='http://www.adityad.com/tag/sixth-sence/' class='tag-link-22' title='1 topic' style='padding-right:5px;font-size: 8pt;'>sixth sence</a>
+<a href='http://www.adityad.com/tag/technology/' class='tag-link-18' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Technology</a>
+<a href='http://www.adityad.com/tag/ubuntu/' class='tag-link-39' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Ubuntu</a>
+<a href='http://www.adityad.com/tag/video/' class='tag-link-19' title='1 topic' style='padding-right:5px;font-size: 8pt;'>video</a>
+<a href='http://www.adityad.com/tag/webdesign/' class='tag-link-17' title='1 topic' style='padding-right:5px;font-size: 8pt;'>WebDesign</a>
+<a href='http://www.adityad.com/tag/website-development/' class='tag-link-9' title='2 topics' style='padding-right:5px;font-size: 10.9189189189pt;'>Website Development</a>
+<a href='http://www.adityad.com/tag/website-title/' class='tag-link-30' title='1 topic' style='padding-right:5px;font-size: 8pt;'>Website title</a>
+<a href='http://www.adityad.com/tag/xml/' class='tag-link-32' title='2 topics' style='padding-right:5px;font-size: 10.9189189189pt;'>XML</a>
+<a href='http://www.adityad.com/tag/youtube/' class='tag-link-62' title='1 topic' style='padding-right:5px;font-size: 8pt;'>youtube</a>     												</div>
+												</div>
+											</div>
+											<div class="col-bottom"></div>
+											<div class="col-bottom2"></div>
+											<div class="col-bottom3"></div>
+										</div>
+										<!-- End Widget -->
+										
+										<!-- Begin Widget -->
+										<div class="widget_wrapper">
+											<div class="inner">
+												<div class="padding">
+													<div class="moduletable categories_left">
+														<h3>Categories</h3>
+														<ul class="sidebar_ul">
+																<li class="cat-item cat-item-1"><a href="http://www.adityad.com/category/about/" title="View all posts filed under About">About</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.adityad.com/category/ajax/" title="View all posts filed under Ajax">Ajax</a>
+</li>
+	<li class="cat-item cat-item-61"><a href="http://www.adityad.com/category/api/" title="View all posts filed under API">API</a>
+</li>
+	<li class="cat-item cat-item-54"><a href="http://www.adityad.com/category/css/" title="View all posts filed under css">css</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.adityad.com/category/joomla/" title="View all posts filed under Joomla">Joomla</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.adityad.com/category/jquery/" title="View all posts filed under jquery &amp; others">jquery &amp; others</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="http://www.adityad.com/category/linux/" title="View all posts filed under Linux">Linux</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.adityad.com/category/mvc/" title="View all posts filed under MVC">MVC</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.adityad.com/category/payment-gateway/" title="View all posts filed under Payment Gateway">Payment Gateway</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.adityad.com/category/php/" title="View all posts filed under PHP">PHP</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="http://www.adityad.com/category/seo/" title="View all posts filed under SEO">SEO</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="http://www.adityad.com/category/showcase/" title="View all posts filed under Showcase">Showcase</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="http://www.adityad.com/category/technology/" title="View all posts filed under Technology">Technology</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://www.adityad.com/category/web-designing/" title="View all posts filed under Web Designing">Web Designing</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.adityad.com/category/website-development/" title="View all posts filed under Website Development">Website Development</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="http://www.adityad.com/category/xml/" title="View all posts filed under XML">XML</a>
+</li>
+														</ul>
+     												</div>
+												</div>
+											</div>
+											<div class="col-bottom"></div>
+											<div class="col-bottom2"></div>
+											<div class="col-bottom3"></div>
+										</div>
+										<!-- End Widget -->
+										
+										<!-- Begin Widget -->
+										<div class="widget_wrapper">
+											<div class="inner">
+												<div class="padding">
+													<div class="moduletable authors_left">
+														<h3>Authors</h3>
+														<ul class="sidebar_ul">
+															<li><a href="http://www.adityad.com/author/admin/" title="Posts by Aditya">Aditya</a></li>														</ul>
+     												</div>
+												</div>
+											</div>
+											<div class="col-bottom"></div>
+											<div class="col-bottom2"></div>
+											<div class="col-bottom3"></div>
+										</div>
+										<!-- End Widget -->
+										
+																			
+									</div>
+								</div>
+<!-- End Left Column -->									
+																
+								<!-- Begin Left Column -->
+						
+								<div id="maincol" >	
+									<div class="inner">
+										<div class="padding">		
+											<div class="module" style="padding: 0 !important; margin-top: 0px;">
+											
+																							
+												<div class="single_content">
+
+														<!-- Begin Post -->
+														<div class="post-wrapper">				
+															<div class="contentpaneopen post-254">
+																<div class="module single-module" style="padding: 0 !important;">
+																	<span class="contentheading" style="margin-top: 20px;">Difference between Php4 and Php5</span>
+																</div>
+																<div class="post_meta_data_archive">
+																	<span class="small">Written by Aditya</span><br />
+																	<span class="createdate small">Sunday, 8 August 2010 05:01</span>
+																</div>
+
+																<div class="post_content">
+																	<h2 class="title">Backward Incompatible Changes</h2>
+<p class="para">Although most existing PHP 4 code should work without changes, you should pay attention to the following backward incompatible changes:</p>
+<ul class="itemizedlist">
+<li><span class="simpara">There are some <a class="link" href="http://www.php.net/manual/en/reserved.keywords.php">new reserved keywords</a>. </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.strrpos.php">strrpos()</a></span> and <span class="function"><a class="function" href="http://www.php.net/manual/en/function.strripos.php">strripos()</a></span> now use the entire string as a needle. </span></li>
+<li><span class="simpara">Illegal use of string offsets causes <b><tt>E_ERROR</tt></b> instead of <b><tt>E_WARNING</tt></b>. An example illegal use is: <i>$str = &#39;abc&#39;; unset($str[0]);</i>. </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-merge.php">array_merge()</a></span> was changed to accept only arrays. If a non-array variable is passed, a <b><tt>E_WARNING</tt></b> will be thrown for every such parameter. Be careful because your code may start emitting <b><tt>E_WARNING</tt></b> out of the blue. </span></li>
+<li><span class="simpara"><b><tt>PATH_TRANSLATED</tt></b> server variable is no longer set implicitly under Apache2 SAPI in contrast to the situation in PHP 4, where it is set to the same value as the <b><tt>SCRIPT_FILENAME</tt></b> server variable when it is not populated by Apache. This change was made to comply with the <a class="link external" href="http://hoohoo.ncsa.uiuc.edu/cgi/">&raquo; CGI specification</a>. see also the <var class="varname"><var class="varname"><a class="classname" href="http://www.php.net/manual/en/reserved.variables.server.php">$_SERVER[&#39;PATH_TRANSLATED&#39;]</a></var></var> description in the manual. This issue also affects PHP versions &gt;= 4.3.2. </span></li>
+<li><span class="simpara">The <b><tt>T_ML_COMMENT</tt></b> constant is no longer defined by the <a class="link" href="http://www.php.net/manual/en/ref.tokenizer.php">Tokenizer</a> extension. If error_reporting is set to <b><tt>E_ALL</tt></b>, PHP will generate a notice. Although the <b><tt>T_ML_COMMENT</tt></b> was never used at all, it was defined in PHP 4. In both PHP 4 and PHP 5 // and /* */ are resolved as the <b><tt>T_COMMENT</tt></b> constant. However the PHPDoc style comments <i>/** */</i>, which starting PHP 5 are parsed by PHP, are recognized as <b><tt>T_DOC_COMMENT</tt></b>. </span></li>
+<li><span class="simpara"><var class="varname"><var class="varname"><a class="classname" href="http://www.php.net/manual/en/reserved.variables.server.php">$_SERVER</a></var></var> should be populated with <var class="varname"><var class="varname">argc</var></var> and <var class="varname"><var class="varname">argv</var></var> if <a class="link" href="http://www.php.net/manual/en/ini.core.php#ini.variables-order">variables_order</a> includes &quot;S&quot;. If you have specifically configured your system to not create <var class="varname"><var class="varname"><a class="classname" href="http://www.php.net/manual/en/reserved.variables.server.php">$_SERVER</a></var></var>, then of course it shouldn&#39;t be there. The change was to always make <var class="varname"><var class="varname">argc</var></var> and <var class="varname"><var class="varname">argv</var></var> available in the CLI version regardless of the <a class="link" href="http://www.php.net/manual/en/ini.core.php#ini.variables-order">variables_order</a> setting. As in, the CLI version will now always populate the global <var class="varname"><var class="varname"><a class="classname" href="http://www.php.net/manual/en/reserved.variables.argc.php">$argc</a></var></var> and <var class="varname"><var class="varname"><a class="classname" href="http://www.php.net/manual/en/reserved.variables.argv.php">$argv</a></var></var> variables. </span></li>
+<li><span class="simpara">An object with no properties is no longer considered &quot;empty&quot;. </span></li>
+<li><span class="simpara">In some cases classes must be declared before use. It only happens if some of the new features of PHP 5 (such as <a class="link" href="http://www.php.net/manual/en/language.oop5.interfaces.php">interfaces</a>) are used. Otherwise the behaviour is the old. </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.get-class.php">get_class()</a></span>, <span class="function"><a class="function" href="http://www.php.net/manual/en/function.get-parent-class.php">get_parent_class()</a></span> and <span class="function"><a class="function" href="http://www.php.net/manual/en/function.get-class-methods.php">get_class_methods()</a></span> now return the name of the classes/methods as they were declared (case-sensitive) which may lead to problems in older scripts that rely on the previous behaviour (the class/method name was always returned lowercased). A possible solution is to search for those functions in all your scripts and use <span class="function"><a class="function" href="http://www.php.net/manual/en/function.strtolower.php">strtolower()</a></span>. </span> <span class="simpara"> This case sensitivity change also applies to the <a class="link" href="http://www.php.net/manual/en/language.constants.predefined.php">magical predefined constants</a> <b><tt>__CLASS__</tt></b>, <b><tt>__METHOD__</tt></b>, and <b><tt>__FUNCTION__</tt></b>. The values are returned exactly as they&#39;re declared (case-sensitive). </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ip2long.php">ip2long()</a></span> now returns <b><tt>FALSE</tt></b> when an invalid IP address is passed as argument to the function, and no longer <i>-1</i>. </span></li>
+<li><span class="simpara">If there are functions defined in the included file, they can be used in the main file independent if they are before <span class="function"><a class="function" href="http://www.php.net/manual/en/function.return.php">return()</a></span> or after. If the file is included twice, PHP 5 issues fatal error because functions were already declared, while PHP 4 doesn&#39;t complain about it. It is recommended to use <span class="function"><a class="function" href="http://www.php.net/manual/en/function.include-once.php">include_once()</a></span> instead of checking if the file was already included and conditionally return inside the included file. </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.include-once.php">include_once()</a></span> and <span class="function"><a class="function" href="http://www.php.net/manual/en/function.require-once.php">require_once()</a></span> first normalize the path of included file on Windows so that including A.php and a.php include the file just once. </span></li>
+<li><span class="simpara">Passing an array to a function by value no longer resets the array&#39;s internal pointer for array accesses made within the function. In other words, in PHP 4 when you passed an array to a function, its internal pointer inside the function would be reset, while in PHP 5, when you pass an array to a function, its array pointer within the function will be wherever it was when the array was passed to the function. </span></li>
+</ul>
+<p><span id="more-254"></span></p>
+<h2 class="title">New Functions</h2>
+<p class="para">In PHP 5 there are some new functions. Here is the list of them:</p>
+<p class="para"><a class="link" href="http://www.php.net/manual/en/ref.array.php">Arrays</a>:</p>
+<ul class="itemizedlist">
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-combine.php">array_combine()</a></span> &#8211; Creates an array by using one array for keys and another for its values </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-diff-uassoc.php">array_diff_uassoc()</a></span> &#8211; Computes the difference of arrays with additional index check which is performed by a user supplied callback function </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-udiff.php">array_udiff()</a></span> &#8211; Computes the difference of arrays by using a callback function for data comparison </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-udiff-assoc.php">array_udiff_assoc()</a></span> &#8211; Computes the difference of arrays with additional index check. The data is compared by using a callback function </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-udiff-uassoc.php">array_udiff_uassoc()</a></span> &#8211; Computes the difference of arrays with additional index check. The data is compared by using a callback function. The index check is done by a callback function also </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-walk-recursive.php">array_walk_recursive()</a></span> &#8211; Apply a user function recursively to every member of an array </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-uintersect-assoc.php">array_uintersect_assoc()</a></span> &#8211; Computes the intersection of arrays with additional index check. The data is compared by using a callback function </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-uintersect-uassoc.php">array_uintersect_uassoc()</a></span> &#8211; Computes the intersection of arrays with additional index check. Both the data and the indexes are compared by using separate callback functions </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.array-uintersect.php">array_uintersect()</a></span> &#8211; Computes the intersection of arrays. The data is compared by using a callback function </span></li>
+</ul>
+<p class="para"><a class="link" href="http://www.php.net/manual/en/ref.ibase.php">InterBase</a>:</p>
+<ul class="itemizedlist">
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-affected-rows.php">ibase_affected_rows()</a></span> &#8211; Return the number of rows that were affected by the previous query </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-backup.php">ibase_backup()</a></span> &#8211; Initiates a backup task in the service manager and returns immediately </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-commit-ret.php">ibase_commit_ret()</a></span> &#8211; Commit a transaction without closing it </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-db-info.php">ibase_db_info()</a></span> &#8211; Request statistics about a database </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-drop-db.php">ibase_drop_db()</a></span> &#8211; Drops a database </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-errcode.php">ibase_errcode()</a></span> &#8211; Return an error code </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-free-event-handler.php">ibase_free_event_handler()</a></span> &#8211; Cancels a registered event handler </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-gen-id.php">ibase_gen_id()</a></span> &#8211; Increments the named generator and returns its new value </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-maintain-db.php">ibase_maintain_db()</a></span> &#8211; Execute a maintenance command on the database server </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-name-result.php">ibase_name_result()</a></span> &#8211; Assigns a name to a result set </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-num-params.php">ibase_num_params()</a></span> &#8211; Return the number of parameters in a prepared query </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-param-info.php">ibase_param_info()</a></span> &#8211; Return information about a parameter in a prepared query </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-restore.php">ibase_restore()</a></span> &#8211; Initiates a restore task in the service manager and returns immediately </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-rollback-ret.php">ibase_rollback_ret()</a></span> &#8211; Rollback transaction and retain the transaction context </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-server-info.php">ibase_server_info()</a></span> &#8211; Request statistics about a database server </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-service-attach.php">ibase_service_attach()</a></span> &#8211; Connect to the service manager </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-service-detach.php">ibase_service_detach()</a></span> &#8211; Disconnect from the service manager </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-set-event-handler.php">ibase_set_event_handler()</a></span> &#8211; Register a callback function to be called when events are posted </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ibase-wait-event.php">ibase_wait_event()</a></span> &#8211; Wait for an event to be posted by the database </span></li>
+</ul>
+<p class="para"><a class="link" href="http://www.php.net/manual/en/ref.iconv.php">iconv</a>:</p>
+<ul class="itemizedlist">
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.iconv-mime-decode.php">iconv_mime_decode()</a></span> &#8211; Decodes a MIME header field </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.iconv-mime-decode-headers.php">iconv_mime_decode_headers()</a></span> &#8211; Decodes multiple MIME header fields at once </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.iconv-mime-encode.php">iconv_mime_encode()</a></span> &#8211; Composes a MIME header field </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.iconv-strlen.php">iconv_strlen()</a></span> &#8211; Returns the character count of string </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.iconv-strpos.php">iconv_strpos()</a></span> &#8211; Finds position of first occurrence of a needle within a haystack </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.iconv-strrpos.php">iconv_strrpos()</a></span> &#8211; Finds the last occurrence of a needle within a haystack </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.iconv-substr.php">iconv_substr()</a></span> &#8211; Cut out part of a string </span></li>
+</ul>
+<p class="para"><a class="link" href="http://www.php.net/manual/en/ref.stream.php">Streams</a>:</p>
+<ul class="itemizedlist">
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-copy-to-stream.php">stream_copy_to_stream()</a></span> &#8211; Copies data from one stream to another </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-get-line.php">stream_get_line()</a></span> &#8211; Gets line from stream resource up to a given delimiter </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-socket-accept.php">stream_socket_accept()</a></span> &#8211; Accept a connection on a socket created by <span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-socket-server.php">stream_socket_server()</a></span> </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-socket-client.php">stream_socket_client()</a></span> &#8211; Open Internet or Unix domain socket connection </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-socket-get-name.php">stream_socket_get_name()</a></span> &#8211; Retrieve the name of the local or remote sockets </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-socket-recvfrom.php">stream_socket_recvfrom()</a></span> &#8211; Receives data from a socket, connected or not </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-socket-sendto.php">stream_socket_sendto()</a></span> &#8211; Sends a message to a socket, whether it is connected or not </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.stream-socket-server.php">stream_socket_server()</a></span> &#8211; Create an Internet or Unix domain server socket </span></li>
+</ul>
+<p class="para"><a class="link" href="http://www.php.net/manual/en/ref.datetime.php">Date and time related</a>:</p>
+<ul class="itemizedlist">
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.idate.php">idate()</a></span> &#8211; Format a local time/date as integer </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.date-sunset.php">date_sunset()</a></span> &#8211; Time of sunset for a given day and location </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.date-sunrise.php">date_sunrise()</a></span> &#8211; Time of sunrise for a given day and location </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.time-nanosleep.php">time_nanosleep()</a></span> &#8211; Delay for a number of seconds and nanoseconds </span></li>
+</ul>
+<p class="para"><a class="link" href="http://www.php.net/manual/en/ref.strings.php">Strings</a>:</p>
+<ul class="itemizedlist">
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.str-split.php">str_split()</a></span> &#8211; Convert a string to an array </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.strpbrk.php">strpbrk()</a></span> &#8211; Search a string for any of a set of characters </span></li>
+<li class="listitem"><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.substr-compare.php">substr_compare()</a></span> &#8211; Binary safe optionally case insensitive comparison of two strings from an offset, up to length characters </span></li>
+</ul>
+<p class="para">Other:</p>
+<ul class="itemizedlist">
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.convert-uudecode.php">convert_uudecode()</a></span> &#8211; decode a uuencoded string </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.convert-uuencode.php">convert_uuencode()</a></span> &#8211; uuencode a string </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.curl-copy-handle.php">curl_copy_handle()</a></span> &#8211; Copy a cURL handle along with all of its preferences </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.dba-key-split.php">dba_key_split()</a></span> &#8211; Splits a key in string representation into array representation </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.dbase-get-header-info.php">dbase_get_header_info()</a></span> &#8211; Get the header info of a dBase database </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.dbx-fetch-row.php">dbx_fetch_row()</a></span> &#8211; Fetches rows from a query-result that had the <b><tt>DBX_RESULT_UNBUFFERED</tt></b> flag set </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.fbsql-set-password.php">fbsql_set_password()</a></span> &#8211; Change the password for a given user </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.file-put-contents.php">file_put_contents()</a></span> &#8211; Write a string to a file </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ftp-alloc.php">ftp_alloc()</a></span> &#8211; Allocates space for a file to be uploaded </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.get-declared-interfaces.php">get_declared_interfaces()</a></span> &#8211; Returns an array of all declared interfaces </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.get-headers.php">get_headers()</a></span> &#8211; Fetches all the headers sent by the server in response to a HTTP request </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.headers-list.php">headers_list()</a></span> &#8211; Returns a list of response headers sent (or ready to send) </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.http-build-query.php">http_build_query()</a></span> &#8211; Generate URL-encoded query string </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.image-type-to-extension.php">image_type_to_extension()</a></span> &#8211; Get file extension for image-type returned by <span class="function"><a class="function" href="http://www.php.net/manual/en/function.getimagesize.php">getimagesize()</a></span>, <span class="function"><a class="function" href="http://www.php.net/manual/en/function.exif-read-data.php">exif_read_data()</a></span>, <span class="function"><a class="function" href="http://www.php.net/manual/en/function.exif-thumbnail.php">exif_thumbnail()</a></span>, <span class="function"><a class="function" href="http://www.php.net/manual/en/function.exif-imagetype.php">exif_imagetype()</a></span> </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.imagefilter.php">imagefilter()</a></span> &#8211; Applies a filter to an image using custom arguments </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.imap-getacl.php">imap_getacl()</a></span> &#8211; Gets the ACL for a given mailbox </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.ldap-sasl-bind.php">ldap_sasl_bind()</a></span> &#8211; Bind to LDAP directory using SASL </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.mb-list-encodings.php">mb_list_encodings()</a></span> &#8211; Returns an array of all supported encodings </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.pcntl-getpriority.php">pcntl_getpriority()</a></span> &#8211; Get the priority of any process </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.pcntl-wait.php">pcntl_wait()</a></span> &#8211; Waits on or returns the status of a forked child as defined by the <i>waitpid()</i> system call </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.pg-version.php">pg_version()</a></span> &#8211; Returns an array with client, protocol and server version (when available) </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.php-check-syntax.php">php_check_syntax()</a></span> &#8211; Check the syntax of the specified file </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.php-strip-whitespace.php">php_strip_whitespace()</a></span> &#8211; Return source with stripped comments and whitespace </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.proc-nice.php">proc_nice()</a></span> &#8211; Change the priority of the current process </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.pspell-config-data-dir.php">pspell_config_data_dir()</a></span> &#8211; Change location of language data files </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.pspell-config-dict-dir.php">pspell_config_dict_dir()</a></span> &#8211; Change location of the main word list </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.setrawcookie.php">setrawcookie()</a></span> &#8211; Send a cookie without URL-encoding the value </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.scandir.php">scandir()</a></span> &#8211; List files and directories inside the specified path </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.snmp-read-mib.php">snmp_read_mib()</a></span> &#8211; Reads and parses a MIB file into the active MIB tree </span></li>
+<li><span class="simpara"><span class="function"><a class="function" href="http://www.php.net/manual/en/function.sqlite-fetch-column-types.php">sqlite_fetch_column_types()</a></span> &#8211; Return an array of column types from a particular table </span></li>
+</ul>
+<div class="section" id="migration5.oop">
+<h2 class="title">New Object Model</h2>
+<p class="para">In PHP 5 there is a new Object Model. PHP&#39;s handling of objects has been completely rewritten, allowing for better performance and more features. In previous versions of PHP, objects were handled like primitive types (for instance integers and strings). The drawback of this method was that semantically the whole object was copied when a variable was assigned, or passed as a parameter to a method. In the new approach, objects are referenced by handle, and not by value (one can think of a handle as an object&#39;s identifier).</p>
+<p class="para">Many PHP programmers aren&#39;t even aware of the copying quirks of the old object model and, therefore, the majority of PHP applications will work out of the box, or with very few modifications.</p>
+<p class="para">The new Object Model is documented at the <a class="link" href="http://www.php.net/manual/en/language.oop5.php">Language Reference</a>.</p>
+<p class="para">In PHP 5, function with the name of a class is called as a constructor only if defined in the same class. In PHP 4, it is called also if defined in the parent class.</p>
+<p class="para">See also the <a class="link" href="http://www.php.net/manual/en/ini.core.php#ini.zend.ze1-compatibility-mode"> zend.ze1_compatibility_mode</a> directive for compatability with PHP 4.</p>
+<p class="para"><strong>Passed by Reference</strong><br />
+		This is an important change. In PHP4, everything was passed by value, including objects. This has changed in PHP5 &#8212; all objects are now passed by reference.</p>
+<p>		PHP Code:<br />
+		$joe = new Person();<br />
+		$joe-&gt;sex = &#39;male&#39;;</p>
+<p>		$betty = $joe;<br />
+		$betty-&gt;sex = &#39;female&#39;;</p>
+<p>		echo $joe-&gt;sex; // Will be &#39;female&#39; <br />
+		The above code fragment was common in PHP4. If you needed to duplicate an object, you simply copied it by assigning it to another variable. But in PHP5 you must use the new clone keyword.</p>
+<p>		Note that this also means you can stop using the reference operator (&amp;). It was common practice to pass your objects around using the &amp; operator to get around the annoying pass-by-value functionality in PHP4.</p>
+<p>		<strong>Class Constants and Static Methods/Properties</strong><br />
+		You can now create class constants that act much the same was as define()&#39;ed constants, but are contained within a class definition and accessed with the :: operator.</p>
+<p>		Static methods and properties are also available. When you declare a class member as static, then it makes that member accessible (through the :: operator) without an instance. (Note this means within methods, the $this variable is not available)</p>
+<p>		<strong>Visibility</strong><br />
+		Class methods and properties now have visibility. PHP has 3 levels of visibility:</p>
+<p>		&nbsp;&nbsp; 1. Public is the most visible, making methods accessible to everyone and properties readable and writable by everyone.<br />
+		&nbsp;&nbsp; 2. Protected makes members accessible to the class itself and any subclasses as well as any parent classes.<br />
+		&nbsp;&nbsp; 3. Private makes members only available to the class itself.</p>
+<p>		<strong>Unified Constructors and Destructors</strong><br />
+		PHP5 introduces a new unified constructor/destructor names. In PHP4, a constructor was simply a method that had the same name as the class itself. This caused some headaches since if you changed the name of the class, you would have to go through and change every occurrence of that name.</p>
+<p>		In PHP5, all constructors are named __construct(). That is, the word construct prefixed by two underscores. Other then this name change, a constructor works the same way.</p>
+<p>		Also, the newly added __destruct() (destruct prefixed by two underscores) allows you to write code that will be executed when the object is destroyed.</p>
+<p>		<strong>Abstract Classes</strong><br />
+		PHP5 lets you declare a class as abstract. An abstract class cannot itself be instantiated, it is purely used to define a model where other classes extend. You must declare a class abstract if it contains any abstract methods. Any methods marked as abstract must be defined within any classes that extend the class. Note that you can also include full method definitions within an abstract class along with any abstract methods.</p>
+<p>		<strong>Interfaces</strong><br />
+		PHP5 introduces interfaces to help you design common APIs. An interface defines the methods a class must implement. Note that all the methods defined in an interface must be public. An interface is not designed as a blueprint for classes, but just a way to standardize a common API.</p>
+<p>		The one big advantage to using interfaces is that a class can implement any number of them. You can still only extend on parent class, but you can implement an unlimited number of interfaces.</p>
+<p>		<strong>Magic Methods</strong><br />
+		There are a number of &quot;magic methods&quot; that add an assortment to functionality to your classes. Note that PHP reserves the naming of methods prefixed with a double-underscore. Never name any of your methods with this naming scheme!</p>
+<p>		Some magic methods to take note of are __call, __get, __set and __toString. These are the ones I find most useful.</p>
+<p>		<strong>Finality</strong><br />
+		You can now use the final keyword to indicate that a method cannot be overridden by a child. You can also declare an entire class as final which prevents it from having any children at all.</p>
+<h2 class="title">Error Reporting</h2>
+<p class="para">As of PHP 5 the error reporting constant <b><tt>E_STRICT</tt></b> is available, with the value <i>2048</i>. When enabled, messages will be issued to warn you about code usage which is deprecated or which may not be future-proof.</p>
+<h2 class="title">Exceptions</h2>
+<p class="para">PHP finally introduces exceptions! An exception is basically an error. By using an exception however, you gain more control the simple trigger_error notices we were stuck with before.</p>
+<p>		An exception is just an object. When an error occurs, you throw an exception. When an exception is thrown, the rest of the PHP code following will not be executed. When you are about to perform something &quot;risky&quot;, surround your code with a try block. If an exception is thrown, then your following catch block is there to intercept the error and handle it accordingly. If there is no catch block, a fatal error occurs.</p>
+<p>		PHP Code:<br />
+		try {<br />
+		&nbsp;&nbsp;&nbsp; $cache-&gt;write();<br />
+		} catch (AccessDeniedException $e) {<br />
+		&nbsp;&nbsp;&nbsp; die(&#39;Could not write the cache, access denied.&#39;);<br />
+		} catch (Exception $e) {<br />
+		&nbsp;&nbsp; die(&#39;An unknown error occurred: &#39; . $e-&gt;getMessage());<br />
+		}&nbsp;</p>
+<p class="para">
+		&nbsp;</p>
+</div>
+<script type="text/javascript" src="http://cdn.socialtwist.com/2009122932345/script.js"></script><a class="st-taf" href="http://tellafriend.socialtwist.com:80" onclick="return false;" style="border:0;padding:0;margin:0;"><img alt="SocialTwist Tell-a-Friend" style="border:0;padding:0;margin:0;" src="http://images.socialtwist.com/2009122932345/button.png"onmouseout="STTAFFUNC.hideHoverMap(this)" onmouseover="STTAFFUNC.showHoverMap(this, '2009122932345', 'http%3A%2F%2Fwww.adityad.com%2Fphp%2Fdifference-between-php4-and-php5%2F', 'Difference+between+Php4+and+Php5')" onclick="STTAFFUNC.cw(this, {id:'2009122932345', link: 'http%3A%2F%2Fwww.adityad.com%2Fphp%2Fdifference-between-php4-and-php5%2F', title: 'Difference+between+Php4+and+Php5' });"/></a>
+
+<div class="shr-bookmarks shr-bookmarks-expand shr-bookmarks-center shr-bookmarks-bg-knowledge">
+<ul class="socials">
+		<li class="shr-delicious">
+			<a href="http://delicious.com/post?url=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;title=Difference+between+Php4+and+Php5" rel="nofollow" class="external" title="Share this on del.icio.us">&nbsp;</a>
+		</li>
+		<li class="shr-digg">
+			<a href="http://digg.com/submit?phase=2&amp;url=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;title=Difference+between+Php4+and+Php5" rel="nofollow" class="external" title="Digg this!">&nbsp;</a>
+		</li>
+		<li class="shr-facebook">
+			<a href="http://www.facebook.com/share.php?v=4&amp;src=bm&amp;u=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;t=Difference+between+Php4+and+Php5" rel="nofollow" class="external" title="Share this on Facebook" onclick="window.open(this.href,'sharer','toolbar=0,status=0,width=626,height=436'); return false;">&nbsp;</a>
+		</li>
+		<li class="shr-gmail">
+			<a href="https://mail.google.com/mail/?ui=2&amp;view=cm&amp;fs=1&amp;tf=1&amp;su=Difference+between+Php4+and+Php5&amp;body=Link:%20http://www.adityad.com/php/difference-between-php4-and-php5/%20(sent%20via%20http://shareaholic.com)%0D%0A%0D%0A----%0D%0A%20Backward%20Incompatible%20Changes%0D%0AAlthough%20most%20existing%20PHP%204%20code%20should%20work%20without%20changes%2C%20you%20should%20pay%20attention%20to%20the%20following%20backward%20incompatible%20changes%3A%0D%0A%0D%0A%09There%20are%20some%20new%20reserved%20keywords.%20%0D%0A%09strrpos%28%29%20and%20strripos%28%29%20now%20use%20the%20entire%20string%20as%20a%20needle.%20%0D%0A%09Illegal%20use%20of%20string" rel="nofollow" class="external" title="Email this via Gmail">&nbsp;</a>
+		</li>
+		<li class="shr-googlebuzz">
+			<a href="http://www.google.com/buzz/post?url=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;imageurl=" rel="nofollow" class="external" title="Post on Google Buzz">&nbsp;</a>
+		</li>
+		<li class="shr-linkedin">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;title=Difference+between+Php4+and+Php5&amp;summary=Backward%20Incompatible%20Changes%0D%0AAlthough%20most%20existing%20PHP%204%20code%20should%20work%20without%20changes%2C%20you%20should%20pay%20attention%20to%20the%20following%20backward%20incompatible%20changes%3A%0D%0A%0D%0A%09There%20are%20some%20new%20reserved%20keywords.%20%0D%0A%09strrpos%28%29%20and%20strripos%28%29%20now%20use%20the%20entire%20string%20as%20a%20needle.%20%0D%0A%09Illegal%20use%20of%20string&amp;source=Aditya%20Didwania" rel="nofollow" class="external" title="Share this on LinkedIn">&nbsp;</a>
+		</li>
+		<li class="shr-mail">
+			<a href="mailto:?subject=%22Difference%20between%20Php4%20and%20Php5%22&amp;body=Link:%20http://www.adityad.com/php/difference-between-php4-and-php5/%20(sent%20via%20shareaholic)%0D%0A%0D%0A----%0D%0A%20Backward%20Incompatible%20Changes%0D%0AAlthough%20most%20existing%20PHP%204%20code%20should%20work%20without%20changes%2C%20you%20should%20pay%20attention%20to%20the%20following%20backward%20incompatible%20changes%3A%0D%0A%0D%0A%09There%20are%20some%20new%20reserved%20keywords.%20%0D%0A%09strrpos%28%29%20and%20strripos%28%29%20now%20use%20the%20entire%20string%20as%20a%20needle.%20%0D%0A%09Illegal%20use%20of%20string" rel="nofollow" class="external" title="Email this to a friend?">&nbsp;</a>
+		</li>
+		<li class="shr-reddit">
+			<a href="http://reddit.com/submit?url=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;title=Difference+between+Php4+and+Php5" rel="nofollow" class="external" title="Share this on Reddit">&nbsp;</a>
+		</li>
+		<li class="shr-stumbleupon">
+			<a href="http://www.stumbleupon.com/submit?url=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;title=Difference+between+Php4+and+Php5" rel="nofollow" class="external" title="Stumble upon something good? Share it on StumbleUpon">&nbsp;</a>
+		</li>
+		<li class="shr-twitter">
+			<a href="http://twitter.com/home?status=Difference+between+Php4+and+Php5+-+http://goo.gl/SRdd5++&amp;source=shareaholic" rel="nofollow" class="external" title="Tweet This!">&nbsp;</a>
+		</li>
+		<li class="shr-blogger">
+			<a href="http://www.blogger.com/blog_this.pyra?t&amp;u=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;n=Difference+between+Php4+and+Php5&amp;pli=1" rel="nofollow" class="external" title="Blog this on Blogger">&nbsp;</a>
+		</li>
+		<li class="shr-blogmarks">
+			<a href="http://blogmarks.net/my/new.php?mini=1&amp;simple=1&amp;url=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;title=Difference+between+Php4+and+Php5" rel="nofollow" class="external" title="Mark this on BlogMarks">&nbsp;</a>
+		</li>
+		<li class="shr-comfeed">
+			<a href="http://www.adityad.com/php/difference-between-php4-and-php5/feed" rel="nofollow" class="external" title="Subscribe to the comments for this post?">&nbsp;</a>
+		</li>
+		<li class="shr-googlebookmarks">
+			<a href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;title=Difference+between+Php4+and+Php5" rel="nofollow" class="external" title="Add this to Google Bookmarks">&nbsp;</a>
+		</li>
+		<li class="shr-hotmail">
+			<a href="http://mail.live.com/?rru=compose?subject=Difference+between+Php4+and+Php5&amp;body=Link:%20http://www.adityad.com/php/difference-between-php4-and-php5/%20(sent%20via%20shareaholic)%0D%0A%0D%0A----%0D%0A%20Backward%20Incompatible%20Changes%0D%0AAlthough%20most%20existing%20PHP%204%20code%20should%20work%20without%20changes%2C%20you%20should%20pay%20attention%20to%20the%20following%20backward%20incompatible%20changes%3A%0D%0A%0D%0A%09There%20are%20some%20new%20reserved%20keywords.%20%0D%0A%09strrpos%28%29%20and%20strripos%28%29%20now%20use%20the%20entire%20string%20as%20a%20needle.%20%0D%0A%09Illegal%20use%20of%20string" rel="nofollow" class="external" title="Email this via Hotmail">&nbsp;</a>
+		</li>
+		<li class="shr-orkut">
+			<a href="http://promote.orkut.com/preview?nt=orkut.com&amp;tt=Difference+between+Php4+and+Php5&amp;du=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;cn=Backward%20Incompatible%20Changes%0D%0AAlthough%20most%20existing%20PHP%204%20code%20should%20work%20without%20changes%2C%20you%20should%20pay%20attention%20to%20the%20following%20backward%20incompatible%20changes%3A%0D%0A%0D%0A%09There%20are%20some%20new%20reserved%20keywords.%20%0D%0A%09strrpos%28%29%20and%20strripos%28%29%20now%20use%20the%20entire%20string%20as%20a%20needle.%20%0D%0A%09Illegal%20use%20of%20string" rel="nofollow" class="external" title="Promote this on Orkut">&nbsp;</a>
+		</li>
+		<li class="shr-technorati">
+			<a href="http://technorati.com/faves?add=http://www.adityad.com/php/difference-between-php4-and-php5/" rel="nofollow" class="external" title="Share this on Technorati">&nbsp;</a>
+		</li>
+		<li class="shr-yahoobuzz">
+			<a href="http://buzz.yahoo.com/submit/?submitUrl=http://www.adityad.com/php/difference-between-php4-and-php5/&amp;submitHeadline=Difference+between+Php4+and+Php5&amp;submitSummary=Backward%20Incompatible%20Changes%0D%0AAlthough%20most%20existing%20PHP%204%20code%20should%20work%20without%20changes%2C%20you%20should%20pay%20attention%20to%20the%20following%20backward%20incompatible%20changes%3A%0D%0A%0D%0A%09There%20are%20some%20new%20reserved%20keywords.%20%0D%0A%09strrpos%28%29%20and%20strripos%28%29%20now%20use%20the%20entire%20string%20as%20a%20needle.%20%0D%0A%09Illegal%20use%20of%20string&amp;submitCategory=science&amp;submitAssetType=text" rel="nofollow" class="external" title="Buzz up!">&nbsp;</a>
+		</li>
+		<li class="shr-yahoomail">
+			<a href="http://compose.mail.yahoo.com/?Subject=Difference+between+Php4+and+Php5&amp;body=Link:%20http://www.adityad.com/php/difference-between-php4-and-php5/%20(sent%20via%20shareaholic)%0D%0A%0D%0A----%0D%0A%20Backward%20Incompatible%20Changes%0D%0AAlthough%20most%20existing%20PHP%204%20code%20should%20work%20without%20changes%2C%20you%20should%20pay%20attention%20to%20the%20following%20backward%20incompatible%20changes%3A%0D%0A%0D%0A%09There%20are%20some%20new%20reserved%20keywords.%20%0D%0A%09strrpos%28%29%20and%20strripos%28%29%20now%20use%20the%20entire%20string%20as%20a%20needle.%20%0D%0A%09Illegal%20use%20of%20string" rel="nofollow" class="external" title="Email this via Yahoo! Mail">&nbsp;</a>
+		</li>
+</ul><div style="clear: both;"></div><div class="shr-getshr" style="display:none;font-size:10px !important"><a target="_blank" href="http://www.shareaholic.com/?src=pub">Get Shareaholic</a></div><div style="clear: both;"></div></div>
+
+																	
+																																		
+																	<div class="meta_post_archive"><span>Tags: <a href="http://www.adityad.com/tag/difference-between-php4-and-php5/" rel="tag">difference between php4 and php5</a>, <a href="http://www.adityad.com/tag/php4-and-php5/" rel="tag">php4 and php5</a></span></div>
+																	
+																																		
+																</div>
+																<div>
+																	<p class="postmetadata alt nounderline">
+																		<small>
+																			
+																				This entry was posted																																								on Sunday, August 8th, 2010 at 5:01 am																				and is filed under <a href="http://www.adityad.com/category/php/" title="View all posts in PHP" rel="category tag">PHP</a>.
+																				You can follow any responses to this entry through the <a href='http://www.adityad.com/php/difference-between-php4-and-php5/feed/'>RSS 2.0</a> feed.
+
+																																								Both comments and pings are currently closed.
+																				
+																		</small>
+																	</p>
+																</div>
+															</div>
+														</div>
+														
+														<!-- End Post -->
+														
+														<a name="comments"></a>
+														
+<!-- You can start editing here. -->
+
+			<!-- If comments are closed. -->
+		<span class="attention">Comments are closed.</span>
+
+	
+
+														
+																												
+														</div>
+														
+													</div>
+												</div>
+											</div>
+										<div class="col-bottom"></div>
+										<div class="col-bottom2"></div>
+										<div class="col-bottom3"></div>
+										
+									<!-- END MAIN PAGE POSTS -->
+									
+									</div>
+								<div class="clr"></div>
+								
+								<!-- End Left Column -->
+							
+							<div class="pathway-block">
+								<span class="breadcrumbs pathway">
+								
+									<a href="http://www.adityad.com/" title="">Home</a>
+	  							
+	  															
+									<span> / Difference between Php4 and Php5</span>
+								
+								</span>
+							</div>
+						</div>
+						
+									</div>
+			</div>
+		</div>
+				
+			<div id="main-bottom"></div>
+			<div id="main-bottom2"></div>
+			<div id="main-bottom3"></div>
+			<div id="bottom-shadow"></div>
+			
+			<!-- End Main Body -->
+			
+		</div>
+	</div>
+	
+			</div>
+		</div>
+		<div id="bottom-menu">
+			<div class="wrapper">
+				<div class="moduletable">
+					<ul id="mainlevel-bottom">
+					<div style="text-align:right; text-transform:none;">
+				<a href="http://www.adityad.com/" title="Aditya Didwania" class="nounder">Designed and Developed By Aditya Didwania</a></div>
+				<div id="copyright" style="padding-top:14px; text-align:left">
+					&copy; Copyright 2011, All Rights Reserved				</div>
+				
+											</ul>		
+				</div>
+			</div>
+		</div>
+		<!-- Begin Footer Block -->
+		<div id="footer">
+			<div class="wrapper">
+			
+				<div align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-5112702530012908";
+/* 728x90, created 7/9/10 */
+google_ad_slot = "5794081490";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+			</div>
+		</div>
+		<!-- End Footer Block -->	
+		
+		<script type='text/javascript' src='http://cdn.wibiya.com/Toolbars/dir_0353/Toolbar_353056/Loader_353056.js?ver=2.9.2'></script>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11586381-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+</html>
