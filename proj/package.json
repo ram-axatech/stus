@@ -1,0 +1,26 @@
+{
+  "name": "knockout",
+  "version": "1.0.0",
+  "description": "This quick start guide will teach you how to wire up TypeScript with [Knockout.js](http://knockoutjs.com/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/knockout": "^3.4.54"
+  },
+  "devDependencies": {
+    "typescript": "^2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/TypeScript-Knockout-Starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/TypeScript-Knockout-Starter/issues"
+  },
+  "homepage": "https://github.com/Microsoft/TypeScript-Knockout-Starter#readme"
+}
